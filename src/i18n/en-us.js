@@ -238,7 +238,7 @@ export default {
     copyViewKey: "Copy view key",
     createNewWallet: "Create new wallet",
     deleteWallet: "Delete Wallet",
-    exit: "Exit Loki GUI Wallet",
+    exit: "Exit Worktips GUI Wallet",
     importOldGUIWallet: "Import wallets from old GUI",
     manageKeyImages: "Manage Key Images",
     openWallet: "Open wallet",
@@ -324,7 +324,7 @@ export default {
     warnings: {
       noKeyImageExport: "No key images found to export",
       usingLocalNode: "Could not access remote node, switching to local only",
-      usingRemoteNode: "lokid not found, using remote node"
+      usingRemoteNode: "worktipsd not found, using remote node"
     }
   },
   placeholders: {
@@ -397,9 +397,9 @@ export default {
     destinationUnknown: "Destination Unknown",
     editAddressBookEntry: "Edit address book entry",
     loadingSettings: "Loading settings",
-    lokiBalance: "Balance",
-    lokiUnlockedBalance: "Unlocked balance",
-    lokiUnlockedShort: "Unlocked",
+    worktipsBalance: "Balance",
+    worktipsUnlockedBalance: "Unlocked balance",
+    worktipsUnlockedShort: "Unlocked",
     me: "Me",
     noTransactionsFound: "No transactions found",
     notes: "Notes",

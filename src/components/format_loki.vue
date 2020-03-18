@@ -1,10 +1,10 @@
 <template>
-  <span> {{ value }} LOKI </span>
+  <span> {{ value }} WTIPS </span>
 </template>
 
 <script>
 export default {
-  name: "FormatLoki",
+  name: "FormatWorktips",
   props: {
     amount: {
       type: Number,

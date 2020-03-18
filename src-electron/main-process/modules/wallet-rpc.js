@@ -120,13 +120,13 @@ export class WalletRPC {
         this.hostname = "127.0.0.1";
         this.port = options.wallet.rpc_bind_port;
 
-        const rpcExecutable = process.platform === "win32" ? "loki-wallet-rpc.exe" : "loki-wallet-rpc";
+        const rpcExecutable = process.platform === "win32" ? "worktips-wallet-rpc.exe" : "worktips-wallet-rpc";
         // eslint-disable-next-line no-undef
         const rpcPath = path.join(__ryo_bin, rpcExecutable);
 
         // Check if the rpc exists
         if (!fs.existsSync(rpcPath)) {
-          reject(new Error("Failed to find Loki Wallet RPC. Please make sure you anti-virus has not removed it."));
+          reject(new Error("Failed to find Worktips Wallet RPC. Please make sure you anti-virus has not removed it."));
           return;
         }
 
@@ -242,7 +242,7 @@ export class WalletRPC {
         break;
 
       case "restore_view_wallet":
-        // TODO: Decide if we want this for loki
+        // TODO: Decide if we want this for worktips
         this.restoreViewWallet(
           params.name,
           params.password,
@@ -1016,8 +1016,8 @@ export class WalletRPC {
 
       let sweep_all = amount == this.wallet_state.unlocked_balance;
 
-      // TODO(loki): Having to specify .blink = true will be deprecated in
-      // lokid v7, we can infer from the priority alone on the
+      // TODO(worktips): Having to specify .blink = true will be deprecated in
+      // worktipsd v7, we can infer from the priority alone on the
       // wallet_rpc_server itself, can't change without creating
       // incompatible v6 releases (i think)
       const rpc_endpoint = sweep_all ? "sweep_all" : "transfer_split";
@@ -1695,9 +1695,9 @@ export class WalletRPC {
       wallets.legacy = [];
       let legacy_paths = [];
       if (os.platform() == "win32") {
-        legacy_paths = ["C:\\ProgramData\\Loki"];
+        legacy_paths = ["C:\\ProgramData\\Worktips"];
       } else {
-        legacy_paths = [path.join(os.homedir(), "Loki")];
+        legacy_paths = [path.join(os.homedir(), "Worktips")];
       }
       for (var i = 0; i < legacy_paths.length; i++) {
         try {

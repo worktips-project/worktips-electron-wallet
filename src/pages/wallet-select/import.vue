@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="q-mx-md import-wallet">
-      <LokiField :label="$t('fieldLabels.newWalletName')" :error="$v.wallet.name.$error">
+      <WorktipsField :label="$t('fieldLabels.newWalletName')" :error="$v.wallet.name.$error">
         <q-input
           v-model="wallet.name"
           :placeholder="$t('placeholders.walletName')"
@@ -10,9 +10,9 @@
           @keyup.enter="import_wallet"
           @blur="$v.wallet.name.$touch"
         />
-      </LokiField>
+      </WorktipsField>
 
-      <LokiField :label="$t('fieldLabels.walletFile')" disable-hover :error="$v.wallet.path.$error">
+      <WorktipsField :label="$t('fieldLabels.walletFile')" disable-hover :error="$v.wallet.path.$error">
         <q-input
           v-model="wallet.path"
           :placeholder="$t('placeholders.selectAFile')"
@@ -27,9 +27,9 @@
           :text-color="theme == 'dark' ? 'white' : 'dark'"
           @click="selectFile"
         />
-      </LokiField>
+      </WorktipsField>
 
-      <LokiField :label="$t('fieldLabels.password')">
+      <WorktipsField :label="$t('fieldLabels.password')">
         <q-input
           v-model="wallet.password"
           :placeholder="$t('placeholders.walletPassword')"
@@ -38,9 +38,9 @@
           hide-underline
           @keyup.enter="import_wallet"
         />
-      </LokiField>
+      </WorktipsField>
 
-      <LokiField :label="$t('fieldLabels.confirmPassword')">
+      <WorktipsField :label="$t('fieldLabels.confirmPassword')">
         <q-input
           v-model="wallet.password_confirm"
           type="password"
@@ -48,7 +48,7 @@
           hide-underline
           @keyup.enter="import_wallet"
         />
-      </LokiField>
+      </WorktipsField>
 
       <q-field>
         <q-btn color="primary" :label="$tc('buttons.importWallet', 1)" @click="import_wallet" />
@@ -60,10 +60,10 @@
 <script>
 import { required } from "vuelidate/lib/validators";
 import { mapState } from "vuex";
-import LokiField from "components/loki_field";
+import WorktipsField from "components/worktips_field";
 export default {
   components: {
-    LokiField
+    WorktipsField
   },
   data() {
     return {
@@ -170,7 +170,7 @@ export default {
     }
   }
 
-  .loki-field {
+  .worktips-field {
     margin-top: 16px;
   }
 }
