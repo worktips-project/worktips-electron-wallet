@@ -25,11 +25,11 @@ export class Backend {
 
   init(config) {
     if (os.platform() === "win32") {
-      this.config_dir = "C:\\ProgramData\\loki";
-      this.wallet_dir = `${os.homedir()}\\Documents\\Loki`;
+      this.config_dir = "C:\\ProgramData\\worktips";
+      this.wallet_dir = `${os.homedir()}\\Documents\\Worktips`;
     } else {
-      this.config_dir = path.join(os.homedir(), ".loki");
-      this.wallet_dir = path.join(os.homedir(), "Loki");
+      this.config_dir = path.join(os.homedir(), ".worktips");
+      this.wallet_dir = path.join(os.homedir(), "Worktips");
     }
 
     if (!fs.existsSync(this.config_dir)) {
@@ -116,11 +116,11 @@ export class Backend {
         port: "22023"
       },
       {
-        host: "explorer.loki.aussie-pools.com",
+        host: "explorer.worktips.aussie-pools.com",
         port: "18081"
       },
       {
-        host: "public.loki.foundation",
+        host: "public.worktips.foundation",
         port: "22023"
       }
     ];
@@ -256,7 +256,7 @@ export class Backend {
         }
 
         if (path) {
-          const baseUrl = net_type === "testnet" ? "https://lokitestnet.com" : "https://lokiblocks.com";
+          const baseUrl = net_type === "testnet" ? "https://worktipstestnet.com" : "https://worktipsblocks.com";
           const url = `${baseUrl}/${path}/`;
           require("electron").shell.openExternal(url + params.id);
         }
