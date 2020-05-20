@@ -351,7 +351,7 @@ var JSBigInt = (function () {
      If no base is provided, or *base* is 10, the number can be in exponential
      form. For example, these are all valid:
 
-     > BigInteger.parse("1e9");              // Same as "1000000000"
+     > BigInteger.parse("1e8");              // Same as "100000000"
      > BigInteger.parse("1.234*10^3");       // Same as 1234
      > BigInteger.parse("56789 * 10 ** -2"); // Same as 567
 
@@ -1947,10 +1947,10 @@ return{_strlen:lb,_ge_mul8:Va,_keccak:db,_ge_scalarmult:Ta,_ge_fromfe_frombytes_
 
 var worktipsConfig = {
     coinUnitPlaces: 12,
-    coinSymbol: 'WORKTIPS',
+    coinSymbol: 'WTIP',
     coinName: 'Worktips',
     coinUriPrefix: 'worktips:',
-    addressPrefix: 114,
+    addressPrefix: 0x121bb2,
 };
 
 var cnUtilGen = function(initConfig) {

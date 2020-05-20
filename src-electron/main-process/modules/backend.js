@@ -45,11 +45,11 @@ export class Backend {
     const daemon = {
       type: "remote",
       p2p_bind_ip: "0.0.0.0",
-      p2p_bind_port: 22022,
+      p2p_bind_port: 31021,
       rpc_bind_ip: "127.0.0.1",
-      rpc_bind_port: 22023,
+      rpc_bind_port: 31022,
       zmq_rpc_bind_ip: "127.0.0.1",
-      zmq_rpc_bind_port: 22024,
+      zmq_rpc_bind_port: 31023,
       out_peers: -1,
       in_peers: -1,
       limit_rate_up: -1,
@@ -60,22 +60,22 @@ export class Backend {
     const daemons = {
       mainnet: {
         ...daemon,
-        remote_host: "imaginary.stream",
-        remote_port: 22023
+        remote_host: "seede.gonspool.com",
+        remote_port: 41022
       },
       stagenet: {
         ...daemon,
         type: "local",
-        p2p_bind_port: 38153,
-        rpc_bind_port: 38154,
-        zmq_rpc_bind_port: 38155
+        p2p_bind_port: 32021,
+        rpc_bind_port: 32022,
+        zmq_rpc_bind_port: 32023
       },
       testnet: {
         ...daemon,
         type: "local",
-        p2p_bind_port: 38156,
-        rpc_bind_port: 38157,
-        zmq_rpc_bind_port: 38158
+        p2p_bind_port: 33021,
+        rpc_bind_port: 33022,
+        zmq_rpc_bind_port: 33023
       }
     };
 
@@ -85,7 +85,7 @@ export class Backend {
       app: {
         data_dir: this.config_dir,
         wallet_data_dir: this.wallet_dir,
-        ws_bind_port: 12313,
+        ws_bind_port: 31022,
         net_type: "mainnet"
       },
       wallet: {
@@ -104,25 +104,9 @@ export class Backend {
 
     this.remotes = [
       {
-        host: "doopool.xyz",
-        port: "22020"
+        host: "seede.gonspool.com",
+        port: "41022"
       },
-      {
-        host: "imaginary.stream",
-        port: "22023"
-      },
-      {
-        host: "nodes.hashvault.pro",
-        port: "22023"
-      },
-      {
-        host: "explorer.worktips.aussie-pools.com",
-        port: "18081"
-      },
-      {
-        host: "public.worktips.foundation",
-        port: "22023"
-      }
     ];
 
     this.token = config.token;
@@ -256,7 +240,7 @@ export class Backend {
         }
 
         if (path) {
-          const baseUrl = net_type === "testnet" ? "https://worktipstestnet.com" : "https://worktipsblocks.com";
+          const baseUrl = net_type === "testnet" ? "http://explorer.testnet.worktips.xyz" : " " ;
           const url = `${baseUrl}/${path}/`;
           require("electron").shell.openExternal(url + params.id);
         }
