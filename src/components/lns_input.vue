@@ -46,7 +46,7 @@ export default {
       return this.unlocked_balance < minBalance * 1e8;
     },
     submit_label() {
-      const label = this.updating ? "buttons.update" : "buttons.purchase";
+      const label = this.updating ? "Disabled" : "Disabled";
       return this.$t(label);
     }
   }),
@@ -138,10 +138,10 @@ export default {
     },
     purchase(record) {
       this.showPasswordConfirmation({
-        title: this.$t("dialog.purchase.title"),
-        noPasswordMessage: this.$t("dialog.purchase.message"),
+        title: this.$t("This Feature is Disabled"),
+        noPasswordMessage: this.$t("this will be enabled in upcoming hardforks"),
         ok: {
-          label: this.$t("dialog.purchase.ok")
+          label: this.$t("Disabled")
         }
       })
         .then(password => {
